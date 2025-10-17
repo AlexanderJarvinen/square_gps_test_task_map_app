@@ -1,0 +1,104 @@
+{
+  "app": {
+    "header": {
+      "title": "Test Assignment for Square GPS"
+    },
+    "lang": {
+      "label": "Language:",
+      "code": {
+        "ru": "RU",
+        "en": "EN"
+      },
+      "option": {
+        "ru": "Russian",
+        "en": "English"
+      }
+    },
+    "tabs": {
+      "about": "About",
+      "map": "Map"
+    }
+  },
+  "tooltip": {
+    "point": "Point",
+    "lat": "Lat",
+    "lng": "Lng"
+  },
+  "map": {
+    "toggle": {
+      "show": "Show marker list",
+      "hide": "Hide marker list"
+    },
+    "search": {
+      "placeholder": "Enter address",
+      "searching": "Searching...",
+      "noData": "No matches"
+    },
+    "add": {
+      "btnOn": "Add mode: ON",
+      "btnOff": "Add marker"
+    },
+    "error": {
+      "reverseGeocode": "Reverse geocoding error"
+    }
+  },
+  "store": {
+    "error": {
+      "unknown": "Unknown error",
+      "suggestions": "Error loading suggestions"
+    },
+    "marker": {
+      "titleTemplate": "Marker № {idSuffix}"
+    }
+  },
+  "backend": {
+    "geocoder": {
+      "http401": "Geocoder: HTTP 401 (API Key required)",
+      "httpStatus": "Geocoder: HTTP {status}",
+      "tooManyRequestsWithRetry": "Too many requests. Retry in {seconds}s.",
+      "tooManyRequests": "Too many requests. Please try again later."
+    },
+    "log": {
+      "unknownFetchError": "Unknown fetch error",
+      "parsingError": "Parsing error:"
+    }
+  },
+  "markers": {
+    "title": "Markers",
+    "deleteAll": "Delete all markers",
+    "deleteOne": "Delete marker",
+    "confirm": {
+      "deleteAll": "Delete all markers?",
+      "deleteOne": "Delete this marker?"
+    }
+  },
+  "about": {
+    "title": "SquareGPS Test Assignment",
+    "intro": "You need to build an application using <strong>Vue.js</strong>, <strong>Vuex</strong>, <strong>VueRouter</strong>, and <strong>Vuetify</strong>. The app header must contain a menu with two items: <em>About</em> and <em>Map</em>.",
+    "sectionAbout": {
+      "title": "“About” section",
+      "text": "This section should contain the text of this assignment, laid out similarly."
+    },
+    "sectionMap": {
+      "title": "“Map” section",
+      "text": "The screen should display a map and a list:",
+      "list": {
+        "addMode": "When clicking the add button, the map should switch to marker add mode...",
+        "highlightOnMarkerClick": "Clicking a marker should highlight the corresponding list item.",
+        "centerOnListClick": "Clicking a list item should center the map on the marker.",
+        "persistMarkers": "Markers must be stored locally and persist after page reload.",
+        "showIdInUrl": "The URL should display the id of the selected marker."
+      }
+    },
+    "extra": {
+      "title": "Additionally",
+      "mobile": "Design for mobile devices.",
+      "i18n": "Provide localization.",
+      "test": "Write one unit test with Jest."
+    },
+    "reminder": {
+      "lead": "Reminder:",
+      "text": "The test assignment is meant to demonstrate the ability to write good modular code and to work with the listed technologies and more. You should be proud of this code."
+    }
+  }
+}

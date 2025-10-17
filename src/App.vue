@@ -1,36 +1,41 @@
 <template>
   <v-app>
-    <v-app-bar app color="primary" dark>
-      <div class="d-flex align-center">
-        <v-img
-          alt="Vuetify Logo"
-          class="shrink mr-2"
-          contain
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-logo-dark.png"
-          transition="scale-transition"
-          width="40"
-        />
+    <v-app-bar class="app-bar-with-bg" app color="primary" height="200" dark>
+      <v-toolbar-title>Тестовое задание для Square GPS</v-toolbar-title>
 
-        <v-img
-          alt="Vuetify Name"
-          class="shrink mt-1 hidden-sm-and-down"
-          contain
-          min-width="100"
-          src="https://cdn.vuetifyjs.com/images/logos/vuetify-name-dark.png"
-          width="100"
-        />
-      </div>
+      <v-spacer />
 
-      <v-spacer></v-spacer>
+      <v-menu offset-y left>
+        <template v-slot:activator="{ on, attrs }">
+          <!-- На мобиле иконка, на десктопе текст -->
+          <v-btn text v-bind="attrs" v-on="on" class="ml-2">
+            <span class="d-none d-sm-inline mr-1">Язык:</span>
+            <strong class="text-uppercase">РУ</strong>
+            <v-icon right>mdi-chevron-down</v-icon>
+          </v-btn>
+        </template>
 
-      <v-btn
-        href="https://github.com/vuetifyjs/vuetify/releases/latest"
-        target="_blank"
-        text
-      >
-        <span class="mr-2">Latest Release</span>
-        <v-icon>mdi-open-in-new</v-icon>
-      </v-btn>
+        <v-list dense>
+          <v-list-item @click="console.log('Русский')">
+            <v-list-item-title>Русский</v-list-item-title>
+          </v-list-item>
+          <v-list-item @click="console.log('Английский')">
+            <v-list-item-title>Английский</v-list-item-title>
+          </v-list-item>
+        </v-list>
+      </v-menu>
+      <template v-slot:extension>
+        <v-tabs
+          background-color="primary darken-1"
+          dark
+          show-arrows
+          align-with-title
+          slider-color="yellow"
+        >
+          <v-tab :to="{ name: 'about' }" exact> О Задании </v-tab>
+          <v-tab :to="{ name: 'map' }" exact> Карта </v-tab>
+        </v-tabs>
+      </template>
     </v-app-bar>
 
     <v-main>
@@ -50,3 +55,19 @@ export default Vue.extend({
   }),
 });
 </script>
+<style scoped>
+.app-bar-with-bg {
+  background-image: url("@/assets/forest_background.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  /* Если хочешь полупрозрачную затемняющую маску */
+  position: relative;
+}
+.app-bar-with-bg::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+}
+</style>

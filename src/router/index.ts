@@ -1,6 +1,6 @@
 import Vue from "vue";
 import VueRouter, { RouteConfig } from "vue-router";
-import HomeView from "../views/HomeView.vue";
+import AboutView from "../views/AboutView.vue";
 import MapView from "../views/MapView.vue";
 
 Vue.use(VueRouter);
@@ -13,7 +13,7 @@ const routes: Array<RouteConfig> = [
   {
     path: "/about",
     name: "about",
-    component: HomeView,
+    component: AboutView,
   },
   {
     path: "/map",

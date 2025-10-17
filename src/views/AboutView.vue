@@ -1,16 +1,16 @@
 <template>
-  <hello-world />
+  <about-page />
 </template>
 
 <script lang="ts">
 import Vue from "vue";
-import HelloWorld from "../components/HelloWorld.vue";
+import AboutPage from "../components/AboutPage.vue";
 
 export default Vue.extend({
   name: "HomeView",
 
   components: {
-    HelloWorld,
+    AboutPage,
   },
 });
 </script>

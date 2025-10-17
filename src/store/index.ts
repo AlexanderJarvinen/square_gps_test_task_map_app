@@ -1,10 +1,15 @@
 import Vue from "vue";
-import Vuex from "vuex";
+import Vuex, { StoreOptions } from "vuex";
 
 Vue.use(Vuex);
 
+export interface RootState {
+  // We will describe it as we develop it.Click to apply
+  count: 0;
+}
+
 export default new Vuex.Store({
-  state: {},
+  state: {} as RootState,
   getters: {},
   mutations: {},
   actions: {},

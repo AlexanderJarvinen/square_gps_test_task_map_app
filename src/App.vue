@@ -1,29 +1,40 @@
 <template>
   <v-app>
-    <v-app-bar class="app-bar-with-bg" app color="primary" height="200" dark>
-      <v-toolbar-title>Тестовое задание для Square GPS</v-toolbar-title>
+    <v-app-bar
+      app
+      dark
+      height="102"
+      extension-height="48"
+      color="rgba(0, 0, 0, 1)"
+      content-class="header-overlay"
+    >
+      <v-toolbar-title class="align-self-start mt-7 no-truncate"
+        >Тестовое задание для Square GPS</v-toolbar-title
+      >
 
       <v-spacer />
 
-      <v-menu offset-y left>
-        <template v-slot:activator="{ on, attrs }">
-          <!-- На мобиле иконка, на десктопе текст -->
-          <v-btn text v-bind="attrs" v-on="on" class="ml-2">
-            <span class="d-none d-sm-inline mr-1">Язык:</span>
-            <strong class="text-uppercase">РУ</strong>
-            <v-icon right>mdi-chevron-down</v-icon>
-          </v-btn>
-        </template>
+      <div class="align-self-start mt-7">
+        <v-menu offset-y left>
+          <template v-slot:activator="{ on, attrs }">
+            <!-- На мобиле иконка, на десктопе текст -->
+            <v-btn text v-bind="attrs" v-on="on" class="ml-2">
+              <span class="d-none d-sm-inline mr-1">Язык:</span>
+              <strong class="text-uppercase">РУ</strong>
+              <v-icon right>mdi-chevron-down</v-icon>
+            </v-btn>
+          </template>
 
-        <v-list dense>
-          <v-list-item @click="console.log('Русский')">
-            <v-list-item-title>Русский</v-list-item-title>
-          </v-list-item>
-          <v-list-item @click="console.log('Английский')">
-            <v-list-item-title>Английский</v-list-item-title>
-          </v-list-item>
-        </v-list>
-      </v-menu>
+          <v-list dense>
+            <v-list-item @click="console.log('Русский')">
+              <v-list-item-title>Русский</v-list-item-title>
+            </v-list-item>
+            <v-list-item @click="console.log('Английский')">
+              <v-list-item-title>Английский</v-list-item-title>
+            </v-list-item>
+          </v-list>
+        </v-menu>
+      </div>
       <template v-slot:extension>
         <v-tabs
           background-color="primary darken-1"
@@ -56,18 +67,20 @@ export default Vue.extend({
 });
 </script>
 <style scoped>
-.app-bar-with-bg {
-  background-image: url("@/assets/forest_background.jpg");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  /* Если хочешь полупрозрачную затемняющую маску */
+.no-truncate {
+  white-space: normal;
+  word-break: break-word;
+}
+
+.header-overlay {
   position: relative;
 }
-.app-bar-with-bg::before {
+
+.header-overlay::before {
   content: "";
   position: absolute;
-  inset: 0;
-  background: rgba(0, 0, 0, 0.4);
+  inset: 0; /* растянуть на всю первую строку */
+  background-color: rgba(0, 0, 0, 0.45); /* ← полупрозрачный слой */
+  pointer-events: none; /* чтобы клики проходили сквозь */
 }
 </style>

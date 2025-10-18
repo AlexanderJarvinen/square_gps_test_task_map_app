@@ -9,6 +9,7 @@ declare module "vue/types/options" {
 declare module "vue/types/vue" {
   interface Vue {
     $router: import("vue-router").default;
+    $route: import("vue-router").Route;
     $store: import("vuex").Store<any>;
     $vuetify: import("vuetify").Framework;
   }

@@ -71,16 +71,4 @@ export default Vue.extend({
   white-space: normal;
   word-break: break-word;
 }
-
-.header-overlay {
-  position: relative;
-}
-
-.header-overlay::before {
-  content: "";
-  position: absolute;
-  inset: 0; /* растянуть на всю первую строку */
-  background-color: rgba(0, 0, 0, 0.45); /* ← полупрозрачный слой */
-  pointer-events: none; /* чтобы клики проходили сквозь */
-}
 </style>

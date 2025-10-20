@@ -40,7 +40,7 @@ describe("MarkerList.vue", () => {
     expect(emits?.[0]).toEqual(["m1"]);
   });
 
-  it("should show correct marker title and coordinates", () => {
+  it("Should show correct marker title and coordinates", () => {
     const marker = {
       id: "m2",
       title: "My Marker",
@@ -62,7 +62,7 @@ describe("MarkerList.vue", () => {
     expect(subtitle).toContain("21.654321");
   });
 
-  it("should confirm and emit 'clear-all' when delete all clicked", async () => {
+  it("Should confirm and emit 'clear-all' when delete all clicked", async () => {
     jest.spyOn(window, "confirm").mockReturnValue(true);
 
     const wrapper = mount(MarkerList, {
